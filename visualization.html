@@ -18,7 +18,7 @@
         font-family: "Source Sans Pro", Helvetica, sans-serif;
         background: #e0edff;
         border-radius: 15px;
-        margin-left: 300;
+        margin-left: 0;
         margin-right: auto;
       }
 
@@ -62,6 +62,7 @@
       }
     </style>
 
+    <title>Katsu</title>
     <!-- favicon -->
     <link rel="icon" type="image/png" href="images/letter-k.png" />
 
@@ -86,7 +87,6 @@
     <!-- Random number generator -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/lib/alea.min.js"></script>
     <!-- d3-cloud library -->
-    <script src="d3.layout.cloud.js"></script>
   </head>
 
   <body class="is-preload">
@@ -101,10 +101,11 @@
       <nav id="nav">
         <ul class="links">
           <li><a href="index.html">Image Processing</a></li>
-          <li><a href="schedule.html">Scheduling App</a></li>
+          <li><a href="schedule.html">Scheduling app</a></li>
           <li class="active">
             <a href="visualization.html">Data Visualization</a>
           </li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
         <ul class="icons">
           <li>
@@ -128,38 +129,51 @@
 
         <!--  Uncomment below (line81) to activate the old world cloud  -->
         <!--  <div id="wordcloud"></div> -->
-        <div>
-          <h2>Most Common Words from survey responses to the question:</h2>
-          <h1>What is one skill you learned from apprentice learning?</h1>
-          <div class="balloon1">
-            <p>CLICK ME! to see what happends to the Bar Chart</p>
+        <article class="post featured">
+          <div>
+            <h2>Most Common Words from survey responses to the question:</h2>
+            <h1>What is one skill you learned from apprentice learning?</h1>
+            <div class="balloon1">
+              <p>CLICK ME! to see what happends to the Bar Chart</p>
+            </div>
+            <div id="cloud-container"></div>
           </div>
-          <div id="cloud-container"></div>
-        </div>
 
-        <!-- Create a canvas for the second visual encoding, the bar chart corresponding to the word cloud -->
-        <div>
-          <h2>Number of Responses for Each Word</h2>
-          <canvas id="quotesBar"></canvas>
-        </div>
-        <div>
-          This project was build on D3(JavaScript library), and data engineering
-          was done on Python. <br />
-          This was a project for
-          <a href="https://apprenticelearning.org/">Appentice Learning</a>.
-          Appentice Learning provides real-world work experiences for eighth
-          graders. They are proud of students work-readiness and they wanted to
-          showcase students satisfactions and great results to donors and
-          partners.
-        </div>
+          <!-- Create a canvas for the second visual encoding, the bar chart corresponding to the word cloud -->
+          <div>
+            <h2>Number of Responses for Each Word</h2>
+            <canvas id="quotesBar"></canvas>
+          </div>
+          <div>
+            <p>
+              This project was build on D3(JavaScript library), and data
+              engineering was done on Python. <br />
+              This was a project for
+              <a href="https://apprenticelearning.org/">Appentice Learning</a>.
+              Appentice Learning provides real-world work experiences for eighth
+              graders. They are proud of students work-readiness and they wanted
+              to showcase students satisfactions and great results to donors and
+              partners.
+            </p>
+          </div>
 
-        <!-- Create a canvas for the fifth visual encoding, the bar chart to show how students 
+          <!-- Create a canvas for the fifth visual encoding, the bar chart to show how students 
           feel better about their future choices -->
-        <!-- Create a canvas for the sixth visual encoding, the bar chart to show how partners 
+          <!-- Create a canvas for the sixth visual encoding, the bar chart to show how partners 
           would recommend Apprentice Learning to other businesses-->
+        </article>
       </div>
       <div id="copyright"></div>
     </div>
+
+    <script src="d3.layout.cloud.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <!-- Javascript to create the bar charts and other visualizations -->
     <script>
